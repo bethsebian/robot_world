@@ -1,0 +1,25 @@
+<h1>Edit <%= @robot.name %></h1>
+
+<img src="<%= @robot.avatar %>"></br>
+
+<form action="/robots/<%= @robot.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  Name:
+    <input type='text' name='robot[name]'value="<%= @robot.name %>" /><br/>
+  City:
+    <input type='text' name='robot[city]'value="<%= @robot.city %>" /><br/>
+  State:
+    <input type='text' name='robot[state]'value="<%= @robot.state %>" /><br/>
+  Headshot (url):
+    <input type='text' name='robot[avatar]' value="<%= @robot.avatar %>" /><br/>
+  Birthdate:
+    <input type='text' name='robot[birthdate]' value="<%= @robot.birthdate %>" /><br/>
+  Date Hired:
+    <input type='text' name='robot[date_hired]' value="<%= @robot.date_hired %>" /><br/>
+  Department:
+    <input type='text' name='robot[department]' value="<%= @robot.department %>" /><br/>
+
+  <input type='submit'/>
+</form>
+

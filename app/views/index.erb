@@ -1,5 +1,16 @@
-<h1>All Tasks</h1>
+<h1>Our Team</h1>
 
-<% @tasks.each do |task| %>
-  <h3><%= task.id %>: <a href="/tasks/<%= task.id %>"><%= task.title %></a></h3>
+<% @robots.each do |robot| %>
+    <img src="<%= robot.avatar %>"></br>
+    This is <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3> . He was born in <%= robot.city %>, <%= robot.state %> on <%= robot.birthdate %>. He was hired into <%= robot.department %> on <%= robot.date_hired %>.
+  </br>
+    <a href="/robots/<%= robot.id %>/edit">Edit</a>
+    <form action="/robots/<%= robot.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </br>
+    </br>
+  <!-- </div> -->
 <% end %>
+
+

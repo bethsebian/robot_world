@@ -1,15 +1,37 @@
 ---
-tasks:
+robots:
 - id: 1
-  title: Test2
-  description: This is the second test task
+  name: RoboCop
+  city: Cleveland
+  state: Ohio
+  avatar: https://robohash.org/robocop
+  birthdate: November 1, 2001
+  date_hired: November 20, 2015
+  department: Surplus
+  title: 
+  description: 
 - id: 2
-  title: test 3
-  description: third attempt
+  name: Johnny Depp
+  city: Johannesburg
+  state: Georgia
+  avatar: https://robohash.org/johnny depp
+  birthdate: June 24, 2002
+  date_hired: January 4, 2014
+  department: Jogging
 - id: 3
-  title: Task 4
-  description: This is task 4
+  name: Sigourney Weaver
+  city: Seattle
+  state: Washington
+  avatar: https://robohash.org/sigourney weaver
+  birthdate: September 7, 2006
+  date_hired: October 19, 2013
+  department: Sailing
 - id: 4
-  title: Task 5
-  description: This is task 5, redux
+  name: Martin Scorcese
+  city: Minneapolis
+  state: Minnesota
+  avatar: https://robohash.org/martin scorsese
+  birthdate: March 8, 2004
+  date_hired: May 2, 2012
+  department: Marching
 total: 4

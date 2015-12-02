@@ -1,5 +1,4 @@
-<a href="/tasks">Task Index</a>
+<a href="/robots">Get to Know</a><h1><%= @robot.name %></h1>
 
-<h1><%= @task.title %></h1>
-
-<p><%= @task.description %></p>
+<img src="<%= @robot.avatar %>"></br>
+This is <a href="/robots/<%= @robot.id %>"><%= @robot.name %></a></h3> . He was born in <%= @robot.city %>, <%= @robot.state %> on <%= @robot.birthdate %>. He was hired into <%= @robot.department %> on <%= @robot.date_hired %>.

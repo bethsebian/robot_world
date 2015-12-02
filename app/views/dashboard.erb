@@ -1,6 +1,9 @@
-<h1>Welcome to the Task Manager</h1>
+<h1>Our Team</h1>
 
-<ul>
-  <li><a href="/tasks">Task Index</a></li>
-  <li><a href="/tasks/new">New Task</a></li>
-</ul>
+<% @robots.each do |robot| %>
+  <!-- <div class="container col-md-4"> -->
+    <img src="<%= robot.avatar %>"></br>
+    This is <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3> . He was born in <%= robot.city %>, <%= robot.state %> on <%= robot.birthdate %>. He was hired into <%= robot.department %> on <%= robot.date_hired %>.
+  </br>
+  </br>
+<% end %>
