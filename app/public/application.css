@@ -1,3 +1,8 @@
 .container {
-  padding: 2% 2% 2% 2%;
+  /*padding-left: 0px;*/
+}
+
+.team_boxes {
+  border: 2px solid black;
+  margin: 20px 20px 20px 20px;
 }

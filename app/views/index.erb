@@ -2,7 +2,7 @@
 
 <div class="container">
 <% @robots.each do |robot| %>
-    <div class="col-md-3" style="margin: 20px; border: 2px solid black">
+    <div class="col-md-3 team_boxes">
     <img src="<%= robot.avatar %>"></br>
     <h3><a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
     <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3> was born in <%= robot.city %>, <%= robot.state %> on <%= robot.birthdate %>. He was hired into <%= robot.department %> on <%= robot.date_hired %>.
