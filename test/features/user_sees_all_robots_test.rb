@@ -76,7 +76,6 @@ class UserSeesAllRobotsTest < FeatureTest
   end
 
   def test_filter_robot_index_by_param
-    skip
     create_robots(2)
     RobotManager.create({"name"       => "dogsitting",
                          "birthdate" => "Friday"})
@@ -92,7 +91,7 @@ class UserSeesAllRobotsTest < FeatureTest
         assert page.has_content?("dogsitting")
       end
     end
-    save_and_open_page
+    
     refute page.has_content?("1 name")
     refute page.has_content?("2 name")
   end
