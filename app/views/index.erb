@@ -1,19 +1,19 @@
 <h1>Our Team</h1>
 
-<div class="container">
+<div class="container" id="index-container">
+
 <% @robots.each do |robot| %>
     <div class="col-md-3 team_boxes">
     <img src="<%= robot.avatar %>"></br>
     <h3><a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
-    <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3> was born in <%= robot.city %>, <%= robot.state %> on <%= robot.birthdate %>. He was hired into <%= robot.department %> on <%= robot.date_hired %>.
+    <%= robot.name %> was born in <%= robot.city %>, <%= robot.state %> on <%= robot.birthdate %>. He was hired into <%= robot.department %> on <%= robot.date_hired %>.
   </br>
     <a href="/robots/<%= robot.id %>/edit">Edit</a>
-    <form action="/robots/<%= robot.id %>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
+    <form action="/robots/<%= robot.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete">
     </br>
     </br>
   </div>
 <% end %>
 </div>
-

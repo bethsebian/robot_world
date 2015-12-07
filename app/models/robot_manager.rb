@@ -12,13 +12,13 @@ class RobotManager
       database['total'] ||= 0
       database['total'] += 1
       database['robots'] << { "id" => database['total'],
-                              "name" => robot[:name],
-                              "city" => robot[:city],
-                              "state" => robot[:state],
-                              "avatar" => robot[:avatar],
-                              "birthdate" => robot[:birthdate],
-                              "date_hired" => robot[:date_hired],
-                              "department" => robot[:department] }
+                              "name" => robot['name'],
+                              "city" => robot['city'],
+                              "state" => robot['state'],
+                              "avatar" => robot['avatar'],
+                              "birthdate" => robot['birthdate'],
+                              "date_hired" => robot['date_hired'],
+                              "department" => robot['department'] }
     end
   end
 
@@ -38,6 +38,11 @@ class RobotManager
 
   def self.find(id)
     Robot.new(raw_robot(id))
+  end
+
+  def self.find_by(input)
+    robots = database.from(:robots).where(input.keys.first => input.values.last)
+    robots.map { |data| Robot.new(data) }
   end
 
   def self.update(id, data)
@@ -61,7 +66,7 @@ class RobotManager
 
   def self.delete_all
     database.transaction do
-      database['tasks'] = []
+      database['robots'] = []
       database['total'] = 0
     end
   end

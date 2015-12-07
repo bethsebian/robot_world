@@ -1,5 +1,10 @@
 <h1>Our Team</h1>
 
+<ul>
+  <li><a href="/robots">Robot Index</a></li>
+  <li><a href="/robots/new">New Robot</a></li>
+</ul>
+
 <% @robots.each do |robot| %>
   <!-- <div class="container col-md-4"> -->
     <img src="<%= robot.avatar %>"></br>
@@ -7,3 +12,4 @@
   </br>
   </br>
 <% end %>
+</ul>

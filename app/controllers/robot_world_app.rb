@@ -8,7 +8,11 @@ class RobotWorldApp <Sinatra::Base
   end
 
   get '/robots' do
-    @robots = RobotManager.all
+    if params[:name]
+      @robots = RobotManager.find_by(name: params[:name])
+    else
+      @robots = RobotManager.all
+    end
     erb :index
   end
 
@@ -18,7 +22,7 @@ class RobotWorldApp <Sinatra::Base
 
   post '/robots' do
     RobotManager.create(params[:robot])
-    redirect '/'
+    redirect '/robots'
   end
 
   # read
@@ -37,7 +41,7 @@ class RobotWorldApp <Sinatra::Base
     redirect "robots/#{id}"
   end
 
-  delete '/tasks/:id' do |id|
+  delete '/robots/:id' do |id|
     RobotManager.delete(id.to_i)
     redirect '/robots'
   end
