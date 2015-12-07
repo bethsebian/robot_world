@@ -1,8 +1,8 @@
 <h1>Our Team</h1>
 
 <div class="container" id="index-container">
-
 <% @robots.each do |robot| %>
+    <div class="robot-<%= robot.id %>">
     <div class="col-md-3 team_boxes">
     <img src="<%= robot.avatar %>"></br>
     <h3><a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
